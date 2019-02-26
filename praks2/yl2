@@ -1,0 +1,10 @@
+#!/bin/bash
+# skript  väljastab muljed ainest
+
+echo "Fred Kamberg " #väljastab reavahetuseta nime
+echo "IS118" # väljastab reavahetusega  õppegrupi
+echo "Tore aine on skriptimine" # väljastab reavahetusega tunde
+echo "Mulje on hea, sest midagi sai tehtud" # väljastab reavahetusega mulje  
+
+#
+#skripti lõpp
