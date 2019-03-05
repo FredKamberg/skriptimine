@@ -1,0 +1,37 @@
+#!/bin/bash
+echo "Sisesta aluskandiku laius (cm):"
+#küsib kasutajalt kandiku laiust
+read laius
+#salvestab kanidku laiuse
+echo "Sisesta aluskandiku pikkus (cm):"
+#küsib kasutajalt kandiku pikkust
+read pikkus
+#salvestab kandiku pikkuse
+echo "Sisesta küpsise laius (cm):"
+#küsib kasutajalt küpsise laiuse
+read laius1
+#salvestab küpsise laiuse
+echo "sisesta küpsise pikkus (cm):"
+#küsib kasutajalt küpsise pikkuse
+read pikkus1
+#salvestab küpsise pikkuse
+echo "Mitu küpsise kihti on tordis?"
+#küsib kasutajalt mitu kihti on tordis
+read kiht
+# salvestab kihtide arvu
+echo "Mitu küpsist on pakis?"
+# küsib kasutajalt küpsiste arvu pakis
+read pakis
+# salvestab küpsiste arvu pakis
+kandik=`expr $laius \* $pikkus`
+# arvutab kandiku pindala
+kkk=`expr $kandik \* $kiht`
+# arvutab kõigi kihtide pindala kokku
+kypsis=`expr $laius1 \* $pikkus1`
+# arvutab küspise pindala
+kpakis=`expr $kypsis \* $pakis`
+# arvutab ühes pakis olevate küpsiste pindala
+total=`expr $kkk / $kpakis`
+# arvutab mitut pakki on vaja
+echo "Vaja on "$total" pakki"
+# väljastab pakkide arvu 
