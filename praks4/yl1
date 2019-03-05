@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "Sisesta oma  ees- ja perenimi: "
+# küsib ees ja perekonna nime 
+read eesnimi perenimi
+# salvestab ees ja perenime
+echo "Sinu eesnimi on $eesnimi ja perenimi on $perenimi"
+# ütleb sulle sinu ees ja perekonna nime
