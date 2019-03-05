@@ -1,0 +1,10 @@
+#!/bin/bash
+echo $(date +"Today is %A, %B %e, %Y")
+# väljastab nädala päeva täis nimega
+# väljastab kuu nime täis nimega
+# väljastab kuupäeva
+# väljastab aasta YYYY formaadis
+echo $(date +"Time is %R")
+# väljastab kellaaja  24 tunni formaadis
+cal
+# kalender
