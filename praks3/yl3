@@ -1,0 +1,6 @@
+#!/bin/bash
+echo -n $(hostname) && echo -n " at " && echo -n $(uptime | cut -f2 -d" ") && echo -n " " && echo -n $(uptime -p | cut -f1 -d",")
+echo " "
+# väljastab  arvuti nime
+# teeb tühiku ja siis  prindib tundide arvu, minuteid ei prindi
+
