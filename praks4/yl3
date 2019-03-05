@@ -1,0 +1,17 @@
+#!/bin/bash
+echo "Kui palju inimesi on grupis?"
+# küsib kasutajalt inimeste arvu grupis
+read inimesed
+# salvestab inimeste arvu
+echo "Kui palju kohti on bussis?"
+# küsib kasutajalt kohtade arvu bussis
+read kohad 
+# salvestab kohtade arvu
+bussnr=`expr $inimesed / $kohad`
+# arvutab mitu täis bussi tuleb
+tais=`expr $bussnr \* $kohad`
+# arvutab inimeste arvu kes mahuvad täis bussi
+maha=`expr $inimesed - $tais`
+# arvutab maha jäänud inimeste arvu
+echo "Vaja on "$bussnr" bussi ja maha jääb "$maha" inimest"
+# väljastab mitu on täis bussi ja palju jääb maha 
