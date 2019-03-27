@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# küsib kolmnurga külgede pikkused ja arvutab pindala Heroni valemi järgi
+
+echo "Sistest külje a väärtus:"
+read A 
+echo "Sisesta külje b väärtus:"
+read B
+echo "Sisesta külje C väärtus:"
+read C
+# Arvutab p
+p=$(bc <<< "scale=2;(($A+$B+$C)/2)")
+# Arvutab pindala
+Heron=$(bc <<< "scale=2;sqrt($p*($p-$A)*($p-$B)*($p-$C))")
+echo "S = $Heron"
+# Väljastab pindala väärtuse
+
