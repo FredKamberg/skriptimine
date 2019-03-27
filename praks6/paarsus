@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# paarsuse kontroll
+#
+if [ -z "$1" ]; then
+# kontrollib kas kontrollitv arv on sisestatud
+echo "Sisesta number faili nime järele"
+# kui numbrit pole sisestatud siis palub sisestada
+else
+	tehe=$(( $1 % 2 ))
+# kui jääki pole siis on paaris
+if [ $tehe -eq 0 ]
+then 
+  echo "$1 on paaris"
+else
+ echo "$1 on paaritu"
+	
+	fi
+fi
+# tingimuse kontroll on lõppenud ja  väljastab vastuse
