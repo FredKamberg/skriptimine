@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# küsib a ja b külje väärtuse
+
+echo "Sistest külje a väärtus:"
+read A 
+echo "Sisesta külje b väärtus:"
+read B
+BSsquared=$(($B*$B))
+ASquared=$(($A*$A))
+CSquared=$(($BSquared+$ASquared))
+Hypo=$(bc <<< "scale=2;sqrt($CSquared)")
+echo "C = $Hypo"
+
