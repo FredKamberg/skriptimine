@@ -1,0 +1,23 @@
+#!/bin/bash
+echo "Kui palju inimesi on grupis?"
+# küsib kasutajalt inimeste arvu grupis
+read reisijad
+# salvestab inimeste arvu
+echo "Kui palju kohti on bussis?"
+# küsib kasutajalt kohtade arvu bussis
+read kohad 
+# salvestab kohtade arvu
+bussid=$(($reisijad / $kohad))
+# arvutab mitu täis bussi tuleb
+yle=$(($reisijad % $kohad))
+# arvutab maha jäänud inimeste arvu
+# kui on ülejaanud, siis tuleb suurendada busside arv 1 võrra
+if test $yle -gt 0
+then
+	# bussid muutuja vaja yledefineerimist, selle pärast ümbersalvestamiseks
+	# $ märki alguses ei kasuta aga arvutamisel juba kasutab
+	bussid=$(($bussid +1))
+fi
+
+echo "Vaja on "$bussid" bussi"
+# väljastab mitut bussi on vaja 
