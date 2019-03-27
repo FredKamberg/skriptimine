@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# küsib a ja b külje väärtuse
+
+echo "Sistest külje a väärtus:"
+read A 
+echo "Sisesta külje b väärtus:"
+read B
+# Arvutab Hüpotenuusi
+Hypo=$(bc <<< "scale=2;sqrt(($A*$A)+($B*$B))")
+echo "C = $Hypo"
+
