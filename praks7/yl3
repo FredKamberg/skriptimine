@@ -1,0 +1,19 @@
+#!/bin/bash
+#küsib aega
+echo -e "Sisesta aeg: "
+#salvestab aja väärtuse
+read aeg
+#kontrollib millisele vahemikule aeg vastab ja annab vastava teate
+if [ $aeg -ge 6 -a $aeg -lt 12 ]; then
+	echo "Tere hommikust!"
+elif [ $aeg -ge 12 -a $aeg -lt 18 ]; then
+	echo "Tere päevast!"
+elif [ $aeg -ge 18 -a $aeg -lt 22 ]; then
+	echo "Tere õhtust!"
+elif [ $aeg -ge 22 -a $aeg -lt 24 ] || [ $aeg -ge 0 -a $aeg -lt 6 ]; then
+	echo "Head ööd!"
+else
+#palub kasutajal sisestada sobilik number
+	echo "Sisesta number 0 kuni 24"
+fi 
+# skripti lõpp
