@@ -1,8 +1,6 @@
 #!/bin/bash
-#küsib aega
-echo -e "Sisesta aeg: "
-#salvestab aja väärtuse
-read aeg
+#salvestab aja väärtuse 24 tunni formaadis võttes süsteemi kellast aja
+aeg=`date +%H`
 #kontrollib millisele vahemikule aeg vastab ja annab vastava teate
 #ning ütleb lõppu kasutaja nime
 if [ $aeg -ge 6 -a $aeg -lt 12 ]; then
