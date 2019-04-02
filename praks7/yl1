@@ -1,0 +1,22 @@
+#!/bin/bash
+#küsib vanust
+echo  "Sisesta vanus:"
+#salvestab vanuse väärtuse
+read vanus
+#kontrollib vanuse väärtuse vahemikku ning annab vastava sõnumi
+if [[ $vanus -gt 0 && $vanus -lt 11 ]] ; 
+then
+	echo "oled laps"
+elif [[ $vanus -ge 11 && $vanus -lt 18 ]] ; 
+then
+	echo "oled nooruk"
+elif [[ $vanus -ge 18 && $vanus -lt 63 ]] ;
+then
+	echo "oled täiskasvanu"
+elif [[ $vanus -ge 63 ]] ;
+then 
+	echo "oled seenior"
+#kui sisend on vigane annab sellest teada
+else
+	echo "vigane sisend"
+fi
