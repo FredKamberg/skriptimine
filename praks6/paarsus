@@ -4,7 +4,8 @@
 #
 if [ -z "$1" ]; then
 # kontrollib kas kontrollitv arv on sisestatud
-echo "Sisesta number faili nime järele"
+echo "Sisesta üsk number faili nime järele"
+echo "näiteks ./paarsus 3"
 # kui numbrit pole sisestatud siis palub sisestada
 else
 	tehe=$(( $1 % 2 ))
