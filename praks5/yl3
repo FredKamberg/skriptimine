@@ -1,0 +1,16 @@
+#!/bin/bash
+#näitab kasutajale päevale vastavat nr
+echo "Pühapäev-0 Esmaspäev-1 Teisipäev-2 Kolmapäev-3 Neljapäev-4 Reede-5 Laupäev-6"
+#ütleb kasutajale, et ta sisestaks päeva nr
+echo "Sisesta lahkumise päeva nr: "
+#salvestab sisestatud nr
+read soidupaev
+echo "Sisesta ära oldud päevade arv: "
+#salvestab reisi pikkuse
+read pikkus
+#teeb arvutused
+vp=$(($pikkus % 7))
+tagasi=$(($soidupaev + $vp))
+#annab teada mis päeval jõuad
+echo "Tagasi jõuad päeval number $tagasi"
+#skripti lõpp
