@@ -1,0 +1,24 @@
+#!/bin/bash
+#küsib kasutajalt, millise arvu väärtust ta soovib kontrollida
+echo -n "Sisesta arv, mida tahad kontrollida: "
+#salvestab väärtuse
+read arv
+#kontrollib kas arv on 0 või 1 ja ütleb, et need ei ole alg ega kordarvud
+if [ $arv -eq 0 -o $arv -eq 1 ]; then
+	echo "$arv - ei ole algarv ega kordarv"
+#kontrollib ülejäänud arvude väärtuseid ja väljastab tulemuse
+else
+	jagaja=2
+	jaak=$(($arv % $jagaja))
+	while [ $jaak -ne 0 ]
+	do
+		jagaja=$(($jagaja + 1))
+		jaak=$(($arv % $jagaja))
+	done
+	if [ $arv -eq $jagaja ]; then
+		echo "$arv - on algarv"
+	else
+		echo "$arv - ei ole algarv"
+	fi
+fi
+#skripti lõpp
