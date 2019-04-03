@@ -1,0 +1,19 @@
+#!/bin/bash
+#küsib kasutajalt arvu, mille numbrite summat ta soovib arvutada
+echo "sisesta meelepärane arv: "
+#salvestab arvu
+read arv
+summa=0
+#teeb tehteid kuni arv on 0
+while [[ $arv -ne 0 ]]
+do
+#leiab jäägi 10 jagades	
+	jaak=$(($arv % 10))
+#liidab jäägid kokku	
+	summa=$(($summa + $jaak))
+#jagab ilma jäägida arvud kümnega	
+	arv=$(($arv / 10))
+done
+#väljastab numbrite summa
+echo "$summa"
+#skripti lõpp
