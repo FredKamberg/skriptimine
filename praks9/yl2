@@ -1,0 +1,22 @@
+#!/bin/bash
+# arvutab ridade arvu
+#küsib kasutajalt ridade arvu
+echo -n "Sisesta ridade arv: "
+#salvestab kasutaja sisendi
+read rida
+#küsib kasutajalt mitut tärni ritta soovib
+echo -n "Sisesta tärnide arv reas: "
+#salvestab kasutaja sisendi
+read tarn
+for (( i=1; i <= $rida; i++ ))
+do 
+# arvutab märkide arvu reas
+	for ((j =1 ; j<=$tarn; j++ ))
+	do
+# defineerib väljastatava märgi väärtuse
+		echo -n "*"
+	done
+#teeb uue rea
+	echo ""
+done
+#skripti lõpp
