@@ -1,0 +1,22 @@
+#!/bin/bash
+# arvutab ridade arvu
+#küsib kasutajalt ridade arvu
+echo -n "Sisesta ridade arv: "
+#salvestab kasutaja sisendi
+read rida
+for (( i= $rida; i>=1 ; i-- ))
+do 
+# arvutab ridade arvu ja märkide arvu reas
+	for ((j =1 ; j<=$rida; j++ ))
+	do
+	if [ $i -gt $j ]; then
+	echo -n "o"
+	else  
+	echo -n "*"
+fi
+
+	done
+#teeb uue rea
+	echo ""
+done
+#skripti lõpp
