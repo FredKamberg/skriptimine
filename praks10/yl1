@@ -1,0 +1,45 @@
+#!/bin/bash
+while :
+do
+osch=0
+#näitab võimalikke gruppe mida valida
+echo "1. Õpilane"
+echo "2. Õpetaja"
+echo -n "Vali, millise grupi kasutajat soovid luua [1 või 2]? "
+read osch
+if [ $osch -eq 1 ] ; then
+	echo "Valisid grupi Õpilane"
+else 
+if [ $osch -eq 2 ] ; then 
+	echo "Valisid grupi Õpetaja"
+	else
+	echo "Vali kas grupp 1 või 2?"
+		fi
+	fi
+#kontrollib kas kasutaja on root 
+if [ $(id -u) -eq 0 ]; then
+	read -p "Sisesta kasutajanimi : " username
+#loob parooli	
+pass=`openssl rand -base64 6`
+	grupp=`expr $osch + 1006`
+	egrep "^$username" /etc/passwd >/dev/null
+#teavitab kui kasutaja on juba olemas	
+if [ $? -eq 0 ]; then
+		echo "$username on juba kasutuses!"
+		exit 1
+	else
+#loob kasutajale kodukausta, määrab kasutajale kooriku nime ja parooli
+		useradd -m -d /home/$username/ -s /bin/bash -p $pass $username -g $grupp
+#annab teada kasutajale ta nime, parooli ja kodukausta asukoha või teavitab ebaõnnestumisest
+		[ $? -eq 0 ] && echo "Loodi kasutaja: $username parool: $pass "
+		echo "kodukaust on /home/$username/" || echo "kasutaja loomine ebaõnnestus!"
+	fi
+else
+#annab teate, et tavakasutja ei saa kasutajat luua	
+echo "Ainult root võib kasutajat luua"
+	exit 2
+fi  
+echo ""
+echo -e "Vajuta CTRL+C, et skriptist väljuda!"
+done
+#skripti lõpp
